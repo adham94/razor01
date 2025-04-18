@@ -18,7 +18,7 @@ namespace OfflineFirstRazor.Pages
         public void OnGet()
         {
             //Console.WriteLine("aaa");
-            Message = " Hey Stranger, welcome to login page > TEST";
+            Message = " Hey Stranger, welcome to login page > TEST > 2 > 3";
             if (Request.Query.ContainsKey("err"))
             {
                 Message = Request.Query["err"].ToString();
