@@ -9,6 +9,8 @@ public class IndexModel : PageModel
     private readonly ILogger<IndexModel> _logger;
     private readonly IDatabaseService _databaseService;
 
+    public string LoggedInUser { get; set; }
+
     public IndexModel(ILogger<IndexModel> logger, IDatabaseService databaseService)
     {
         _logger = logger;
@@ -17,6 +19,8 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
+        LoggedInUser = HttpContext.Session.GetString("username") ?? "Guest";
+
         var initDB = new InitDB("Razor01", _databaseService);
     }
 }

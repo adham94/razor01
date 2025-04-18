@@ -26,6 +26,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        @if (Context.Session.GetString("username") != null)
+                        {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-danger" href="/logout">Logout</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
